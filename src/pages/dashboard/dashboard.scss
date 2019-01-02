@@ -1,25 +1,17 @@
 page-dashboard {
-  .card-item {
-    display: flex;
+  .col-dashboard {
+    margin: 8%;
+    padding: 8% 4%;
+    background: color($colors, light);
   }
-  .card-icon {
-    font-size: 36px;
-    margin-top: 2%;
-    margin-right: 8%;
-    color: #3f35cf;
+  .col-dashboard span {
+    text-align: center;
+    color: color($colors,secondary);
+    margin-left: 40%;
   }
-  .card-label {
-    color: #c0c0c0;
-    margin: 1px;
-  }
-  .card-text {
-    color: #464646;
-  }
-  .card-div {
-    margin-left: 4%;
-  }
-  .card-arrow {
-    margin-left: 14%;
-    margin-top: 5%;
+  .col-dashboard .label {
+    color: #928de3;
+    margin: 0;
+
   }
 }

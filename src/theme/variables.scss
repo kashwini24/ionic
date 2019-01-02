@@ -15,9 +15,10 @@ $font-path: "../assets/fonts";
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary: #3f35cf, secondary: #ffffff, danger: #f53d3d, light: #f4f4f4, dark: #222);
+$colors: ( primary: #3f35cf, secondary: #ffffff, danger: #f53d3d, light: #5249d3, dark: #222);
 $header_color:#3f35cf;
 $sidemenu_color:#3f35cf;
+$badge-md-border-radius:16px;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -29,9 +30,34 @@ $sidemenu_color:#3f35cf;
 // Windows only Sass variables can go here
 // App Theme
 // --------------------------------------------------
-.card-icon {
-  
+.card-item {
+  display: flex;
 }
+.card-icon {
+  font-size: 36px;
+  
+  margin-right: 8%;
+  color: #3f35cf;
+}
+.card-label {
+  color: #c0c0c0;
+  margin: 1px;
+}
+.card-text {
+  color: #464646;
+}
+.card-div {
+  margin-left: 4%;
+}
+.card-arrow {
+  margin-left: 14%;
+
+}
+
+.show-card {
+  padding: 0 !important;
+}
+
 // Ionic apps can have different themes applied, which can
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's

@@ -1,25 +1,27 @@
 page-vechiles {
-  .card-item {
-    display: flex;
-  }
-  .card-icon {
-    font-size: 36px;
-    margin-top: 2%;
-    margin-right: 8%;
-    color: #3f35cf;
-  }
+
+
   .card-label {
     color: #c0c0c0;
     margin: 1px;
   }
   .card-text {
     color: #464646;
+    margin-top: 10%;
   }
   .card-div {
     margin-left: 4%;
+    margin-top: 4%;
   }
   .card-arrow {
     margin-left: 14%;
-    margin-top: 5%;
+    padding-top: 33px;
   }
+  .card-label-a {
+    color: #7d7d7d;
+  }
+  .no-padding{
+    padding:0 5px;
+  }
+
 }

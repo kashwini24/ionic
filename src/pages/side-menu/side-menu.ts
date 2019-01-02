@@ -11,9 +11,7 @@ export class SideMenuPage {
   MENU = {
     DEFAULT: 'menu-material',
     MATERIAL: 'menu-material',
-    AVATAR: 'menu-avatar',
-    DARK: 'menu-dark',
-    RIGHT: 'menu-right',
+
   };
 
   constructor(public navCtrl: NavController, public menuCtrl: MenuController) { }
@@ -27,12 +25,14 @@ export class SideMenuPage {
   //   this.menuCtrl.enable(false, 'menu-right');
   // }
 
-  changeMenu(menu) {
+
+  enableAuthenticatedMenu(menu) {
     // Disables all other sidemenus
-    Object.keys(this.MENU).map(k => this.menuCtrl.enable(false, this.MENU[k]));
+
 
     // Enables then open the selected menu
-    this.menuCtrl.enable(true, menu);
-    this.menuCtrl.open(menu);
+    this.menuCtrl.enable(true, 'menu-material');
+    this.menuCtrl.open('menu-material');
   }
+
 }

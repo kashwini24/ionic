@@ -19,11 +19,9 @@
       <ion-segment-button value="Ongoing">
         Ongoing
       </ion-segment-button>
-      <ion-segment-button value="Completed">
-        Completed
-      </ion-segment-button>
-      <ion-segment-button value="expired">
-        Expired
+
+      <ion-segment-button value="closed">
+        Closed
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -32,13 +30,31 @@
 
 <ion-content>
   <ion-card>
-    <ion-card-content>
+    <ion-card-content  (click)="itemTapped($event, item)">
 
       <div class="card-item">
-        <ion-icon name="book" class="card-icon"></ion-icon>
-        <div class="card-div"><ion-label class="card-label">Booking ID</ion-label><span class="card-text">3459666</span></div>
-        <div class="card-div"><ion-label class="card-label">Booking Name</ion-label><span class="card-text">3459666</span></div>
-        <ion-icon name="arrow-forward" class="card-arrow"></ion-icon>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+              <ion-icon name="hammer" class="card-icon"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+                <div class="card-div"><ion-label class="card-label">Service ID</ion-label><span class="card-text">3459666</span></div>
+            </ion-col>
+            <ion-col col-4>
+              <div class="card-div"><ion-label class="card-label">Customer Name</ion-label><span class="card-text">Niraj Kumar</span></div>
+            </ion-col>
+            <ion-col col-1>
+              <ion-icon name="arrow-forward" class="card-arrow"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+
+
+
         </div>
     </ion-card-content>
 
@@ -46,13 +62,3 @@
 
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-tabs>
-      <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-      <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
-      <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
-    </ion-tabs>
-  </ion-toolbar>
-</ion-footer>

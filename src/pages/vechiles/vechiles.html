@@ -14,32 +14,54 @@
     </ion-toolbar> -->
 
   </ion-navbar>
-  <ion-toolbar  no-border-top color="primary">
-    <ion-segment color="secondary" selectedIndex="1">
-      <ion-segment-button value="Ongoing">
-        Ongoing
-      </ion-segment-button>
-      <ion-segment-button value="Completed">
-        Completed
-      </ion-segment-button>
-      <ion-segment-button value="expired">
-        Expired
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+
 
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="secondary" full (click)="presentActionSheet()">
+          Short
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full color="secondary" (click)="presentActionSheet()">
+          Filter
+        </button>
+      </ion-col>
+  </ion-row>
+</ion-grid>
 
-      <div class="card-item">
-        <ion-icon name="book" class="card-icon"></ion-icon>
-        <div class="card-div"><ion-label class="card-label">Booking ID</ion-label><span class="card-text">3459666</span></div>
-        <div class="card-div"><ion-label class="card-label">Booking Name</ion-label><span class="card-text">3459666</span></div>
-        <ion-icon name="arrow-forward" class="card-arrow"></ion-icon>
+  <ion-card>
+    <ion-card-content class="show-card">
+
+      <div class="card-item" border-bottom>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>
+                   <img src="assets/img/bike.jpg"/>
+            </ion-col>
+            <ion-col col-8>
+                  <div class="card-div">
+                    <span class="card-text">Honda Active</span>
+                    <ion-label class="card-label">14569852</ion-label>
+
+                    <ion-label class="card-label-a">IndraNagar</ion-label>
+                  </div>
+            </ion-col>
+            <ion-col col-1>
+                  <ion-icon name="arrow-forward" class="card-arrow"></ion-icon>
+            </ion-col>
+          </ion-row>
+          
+        </ion-grid>
+
+
         </div>
+
     </ion-card-content>
 
   </ion-card>

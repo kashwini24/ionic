@@ -7,7 +7,12 @@ import { Subject } from 'rxjs';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { BookingsPage } from '../pages/bookings/bookings';
+import { ServicesPage } from '../pages/services/services';
+import { VechilesPage } from '../pages/vechiles/vechiles';
+import { AttendencePage } from '../pages/attendence/attendence';
 import { TabsPage } from '../pages/tabs/tabs';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { NewservicesPage } from '../pages/newservices/newservices';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,12 +20,16 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'SideMenuPage';
+  rootPage: any = DashboardPage;
   activePage = new Subject();
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;
   state: any;
+
+  tab1Root = DashboardPage;
+  tab2Root = NewservicesPage;
+  tab3Root = HomePage;
 
   constructor(
     public platform: Platform,
@@ -45,10 +54,12 @@ export class MyApp {
 
     this.pages = [
       { title: 'Bookings', component: BookingsPage, active: true, icon: 'book' },
-      { title: 'Services', component: TabsPage, active: false, icon: 'construct' },
+      { title: 'Services', component: ServicesPage, active: false, icon: 'construct' },
 
-      { title: 'Vechiles', component: 'SideMenuPage', active: false, icon: 'archive' },
-      { title: 'Attendence', component: 'SideMenuPage', active: false, icon: 'finger-print' },
+      { title: 'Vechiles', component: VechilesPage, active: false, icon: 'archive' },
+      { title: 'Attendence', component: AttendencePage, active: false, icon: 'finger-print' },
+      { title: 'Tabs', component: TabsPage, active: false, icon: 'finger-print' },
+
 
 
 
@@ -83,4 +94,5 @@ export class MyApp {
     this.rightMenuItems.map(menuItem => menuItem.active = false);
     item.active = true;
   }
+
 }
