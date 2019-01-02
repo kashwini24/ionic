@@ -1,34 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { NgModule, ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { BookingsPage } from '../pages/bookings/bookings';
+import { ServicesPage } from '../pages/services/services';
+import { TabsPage } from '../pages/tabs/tabs';
 
+import { Camera } from '@ionic-native/camera';
+import { CardIO } from '@ionic-native/card-io';
+import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppState } from './app.global';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    BookingsPage,
+    TabsPage
   ],
   imports: [
-    BrowserModule,
+
     IonicModule.forRoot(MyApp),
+     BrowserModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    BookingsPage,
+    TabsPage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  providers: [ StatusBar,AppState,
+    SplashScreen, Camera, CardIO,  { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
-export class AppModule {}
+export class AppModule { }

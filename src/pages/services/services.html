@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Services</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-toolbar color="primary">
+      <ion-searchbar ></ion-searchbar>
+    </ion-toolbar> -->
+
+  </ion-navbar>
+  <ion-toolbar  no-border-top color="primary">
+    <ion-segment color="secondary" selectedIndex="1">
+      <ion-segment-button value="Ongoing">
+        Ongoing
+      </ion-segment-button>
+      <ion-segment-button value="Completed">
+        Completed
+      </ion-segment-button>
+      <ion-segment-button value="expired">
+        Expired
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+
+      <div class="card-item">
+        <ion-icon name="book" class="card-icon"></ion-icon>
+        <div class="card-div"><ion-label class="card-label">Booking ID</ion-label><span class="card-text">3459666</span></div>
+        <div class="card-div"><ion-label class="card-label">Booking Name</ion-label><span class="card-text">3459666</span></div>
+        <ion-icon name="arrow-forward" class="card-arrow"></ion-icon>
+        </div>
+    </ion-card-content>
+
+  </ion-card>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+      <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+      <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

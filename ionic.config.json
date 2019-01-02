@@ -1,6 +1,8 @@
 {
   "name": "ashApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "a606bdd4"
 }
