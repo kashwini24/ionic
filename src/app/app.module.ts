@@ -13,7 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BookingdetailsPage } from '../pages/bookingdetails/bookingdetails';
 import { ServicesdetailsPage } from '../pages/servicesdetails/servicesdetails';
 import { VechiledetailsPage } from '../pages/vechiledetails/vechiledetails';
-
+import { LoginPage } from '../pages/login/login';
 
 import { Camera } from '@ionic-native/camera';
 import { CardIO } from '@ionic-native/card-io';
@@ -21,6 +21,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppState } from './app.global';
+import { HTTP } from '@ionic-native/http';
+import { HttpClientModule,HTTP_INTERCEPTORS  } from '@angular/common/http';
+
+import { InterceptorProvider } from '../providers/interceptor/interceptor';
+import { IonicStorageModule } from '@ionic/storage';
+import { ApiProvider } from '../providers/api/api';
+
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -36,12 +47,19 @@ import { AppState } from './app.global';
     TabsPage,
     BookingdetailsPage,
     ServicesdetailsPage,
-    VechiledetailsPage
+    VechiledetailsPage,
+    LoginPage
   ],
   imports: [
 
     IonicModule.forRoot(MyApp),
-     BrowserModule
+     BrowserModule,
+     IonicStorageModule.forRoot({
+      name: '__mydb',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
+     HttpClientModule,
+
 
   ],
   bootstrap: [IonicApp],
@@ -58,9 +76,14 @@ import { AppState } from './app.global';
     TabsPage,
     BookingdetailsPage,
     ServicesdetailsPage,
-    VechiledetailsPage
+    VechiledetailsPage,
+    LoginPage
   ],
   providers: [ StatusBar,AppState,
-    SplashScreen, Camera, CardIO,  { provide: ErrorHandler, useClass: IonicErrorHandler }]
+    SplashScreen, Camera, CardIO,HTTP,  { provide: ErrorHandler, useClass: IonicErrorHandler },
+    InterceptorProvider,
+    ApiProvider,
+
+    AuthServiceProvider]
 })
 export class AppModule { }

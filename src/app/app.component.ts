@@ -13,6 +13,7 @@ import { AttendencePage } from '../pages/attendence/attendence';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { NewservicesPage } from '../pages/newservices/newservices';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,16 +21,12 @@ import { NewservicesPage } from '../pages/newservices/newservices';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = DashboardPage;
+  rootPage: any = BookingsPage;
   activePage = new Subject();
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;
   state: any;
-
-  tab1Root = DashboardPage;
-  tab2Root = NewservicesPage;
-  tab3Root = HomePage;
 
   constructor(
     public platform: Platform,

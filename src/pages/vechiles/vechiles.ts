@@ -1,5 +1,7 @@
+import { ApiProvider } from './../../providers/api/api';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {  NavController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 import { ActionSheetController } from 'ionic-angular'
 
 @Component({
@@ -8,7 +10,7 @@ import { ActionSheetController } from 'ionic-angular'
 })
 export class VechilesPage {
 
-  constructor(public navCtrl: NavController,public actionSheetCtrl: ActionSheetController) {
+  constructor(public navCtrl: NavController,public actionSheetCtrl: ActionSheetController, public apiProvider: ApiProvider) {
 
 
 
